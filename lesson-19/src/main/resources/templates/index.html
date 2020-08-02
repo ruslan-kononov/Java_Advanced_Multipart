@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Page</title>
+    <link rel="stylesheet" th:href="@{/css/registr.css}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+          crossorigin="anonymous">
+</head>
+<body>
+<form action="#" th:action="@{/registerUser}" th:object="${user}" method="post" enctype="multipart/form-data">
+    <label>
+        <p class="label-txt">ENTER YOUR NAME</p>
+        <input type="text" class="input" th:field="*{name}" required>
+        <div class="line-box">
+            <div class="line"></div>
+        </div>
+    </label>
+    <label>
+        <p class="label-txt">ENTER YOUR EMAIL</p>
+        <input type="text" class="input" th:field="*{email}" required>
+        <div class="line-box">
+            <div class="line"></div>
+        </div>
+    </label>
+    <label>
+        <p class="label-txt">ENTER YOUR PASSWORD</p>
+        <input type="text" class="input" th:field="*{password}" required>
+        <div class="line-box">
+            <div class="line"></div>
+        </div>
+    </label>
+    <label>
+        <p class="label-txt-2">UPLOAD YOUR PHOTO</p>
+        <input id="singleFileUploadInput" class="input inputfile" type="file" name="file" required />
+        <label for="singleFileUploadInput">Choose file</label>
+        <div>
+            <div id="singleFileUploadError"></div>
+        </div>
+    </label>
+    <button type="submit">Submit</button>
+</form>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+<script th:src="@{/js/registr.js}"></script>
+</body>
+</html>
